@@ -1,5 +1,18 @@
+import Hero from "./Hero";
+
 function About() {
-  return <h2>About us</h2>;
+  return (
+    <>
+      <Hero text="from about" />
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 offset-lg-2 my-5">
+            <p className="lead">tata</p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default About;
