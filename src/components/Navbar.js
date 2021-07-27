@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function Navbar({ searchKeyword, setSearchKeyword }) {
+  const history = useHistory();
+
+  //Go to the search page whenever the user searches for something and show the searched keyword
   const updateSearchKeywrord = (event) => {
+    history.push(`/search`);
     setSearchKeyword(event.target.value);
   };
 
@@ -45,7 +49,7 @@ function Navbar({ searchKeyword, setSearchKeyword }) {
               </Link>
             </li>
           </ul>
-          <form className="d-flex">
+          <form className="d-flex" onSubmit={(event) => event.preventDefault()}>
             <input
               className="form-control me-2"
               type="search"
