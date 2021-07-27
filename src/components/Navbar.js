@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ searchKeyword, setSearchKeyword }) {
+  const updateSearchKeywrord = (event) => {
+    setSearchKeyword(event.target.value);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -34,7 +38,7 @@ function Navbar() {
               <Link
                 className="nav-link disabled"
                 to="b"
-                tabindex="-1"
+                tabIndex="-1"
                 aria-disabled="true"
               >
                 Disabled
@@ -47,6 +51,8 @@ function Navbar() {
               type="search"
               placeholder="Search"
               aria-label="Search"
+              value={searchKeyword}
+              onChange={updateSearchKeywrord}
             />
             <button className="btn btn-outline-success" type="submit">
               Search
