@@ -7,6 +7,7 @@ function MovieDetail() {
   const [movieDetails, setMovieDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const posterPath = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
+  const backdropUrl = `https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`;
 
   useEffect(() => {
     fetch(
@@ -24,6 +25,7 @@ function MovieDetail() {
     <>
       <Hero
         text={!isLoading ? movieDetails.original_title : "... loading 🍿"}
+        backdrop={backdropUrl}
       />
 
       <div className="container my-5">
