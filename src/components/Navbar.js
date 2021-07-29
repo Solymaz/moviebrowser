@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 function Navbar({ searchKeyword, setSearchKeyword }) {
   const history = useHistory();
 
-  //Go to the search page whenever the user searches for something 
+  //Go to the search page whenever the user searches for something
   const updateSearchKeywrord = (event) => {
     setSearchKeyword(event.target.value);
     if (event.target.value.length > 0) {
@@ -35,11 +35,6 @@ function Navbar({ searchKeyword, setSearchKeyword }) {
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">
-                About
               </Link>
             </li>
           </ul>

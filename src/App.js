@@ -1,7 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import About from "./components/About";
 import Search from "./components/Search";
 import MovieDetail from "./components/MovieDetail";
 import { Switch, Route } from "react-router-dom";
@@ -35,7 +34,6 @@ function App() {
       />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
         <Route path="/search">
           <Search
             searchKeyword={searchKeyword}
