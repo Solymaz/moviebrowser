@@ -32,7 +32,7 @@ function MovieDetail() {
         <div className="row">
           <div className="col-md-3">
             <img
-              src={posterPath}
+              src={movieDetails.poster_path ? posterPath : "/not-found.png"}
               alt="..."
               className="img-fluid shadow rounded"
             />
