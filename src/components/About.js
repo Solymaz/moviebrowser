@@ -1,13 +1,17 @@
+import { Link } from "react-router-dom";
 import Hero from "./Hero";
 
 function About() {
   return (
     <>
-      <Hero text="from about" />
+      <Hero text="About Sol Movie Browser 🍿" />
       <div className="container">
-        <div className="row">
-          <div className="col-lg-8 offset-lg-2 my-5"></div>
+        <div className="my-5">
+          You can find over 768 thousands of movies and TV shows 🤩
         </div>
+        <Link to={"/search"} className="btn btn-primary">
+          happy searching
+        </Link>
       </div>
     </>
   );

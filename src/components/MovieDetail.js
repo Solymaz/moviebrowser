@@ -20,7 +20,6 @@ function MovieDetail() {
         setIsLoading(false);
       });
   }, [id]);
-  //todo: deal with a missing img
   return (
     <>
       <Hero
@@ -33,7 +32,7 @@ function MovieDetail() {
           <div className="col-md-3">
             <img
               src={movieDetails.poster_path ? posterPath : "/not-found.png"}
-              alt="..."
+              alt="movie poster"
               className="img-fluid shadow rounded"
             />
           </div>
