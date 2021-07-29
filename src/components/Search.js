@@ -1,22 +1,26 @@
 import Hero from "./Hero";
+import MovieCard from "./MovieCard";
 
 function Search({ searchKeyword, searchResults, showError }) {
   const title = `You are searching for ${searchKeyword}`;
 
   const showResults = searchResults.map((result, i) => {
-    return <div key={i}>{result.original_title}</div>;
+    return <MovieCard movie={result} key={i} />;
   });
+
   return (
     <>
       <Hero text={title} />
-      {showResults}
-      {showError && <div>not found</div>}
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 offset-lg-2 my-5">
-            <p className="lead">rara</p>
-          </div>
+      {showResults && (
+        <div className="container">
+          <div className="row">{showResults}</div>
         </div>
+      )}
+      {showError && (
+        <div className="m-5">Not found any movie 🙁 try again 🎬</div>
+      )}
+      <div className="container">
+        <div className="row"></div>
       </div>
     </>
   );
