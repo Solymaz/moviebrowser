@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Search from "./components/Search";
+import MovieDetail from "./components/MovieDetail";
 import { Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -33,9 +34,7 @@ function App() {
         setSearchKeyword={setSearchKeyword}
       />
       <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
+        <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
         <Route path="/search">
           <Search
@@ -44,6 +43,7 @@ function App() {
             showError={showError}
           />
         </Route>
+        <Route path="/movies/:id" component={MovieDetail} />
       </Switch>
     </div>
   );

@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+  const detailUrl = `/movies/${movie.id}`;
   return (
     <div className="col-lg-3 col-md-3 col-2 my-4">
       <div className="card">
@@ -11,9 +13,9 @@ const MovieCard = ({ movie }) => {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <a href="b" className="btn btn-primary">
+          <Link to={detailUrl} className="btn btn-primary">
             show details
-          </a>
+          </Link>
         </div>
       </div>
     </div>
