@@ -9,13 +9,21 @@ import { useState, useEffect } from "react";
 function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState("");
+  const [showError, setShowError] = useState(false);
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/550?api_key=061b47a00d8118311aac347c3ce3e5bd&language=en-US&query=${searchKeyword}&page=1&include_adult=false`
-    )
-      .then((response) => response.json())
-      .then((data) => setSearchResults(data.results));
+    if (searchKeyword) {
+      fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=061b47a00d8118311aac347c3ce3e5bd&language=en-US&query=${searchKeyword}&page=1&include_adult=false`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setSearchResults(data.results);
+          // show error if no result was found
+          setShowError(data.results.length === 0);
+        });
+    }
   }, [searchKeyword]);
 
   return (
@@ -30,7 +38,11 @@ function App() {
         </Route>
         <Route path="/about" component={About} />
         <Route path="/search">
-          <Search searchKeyword={searchKeyword} searchResults={searchResults} />
+          <Search
+            searchKeyword={searchKeyword}
+            searchResults={searchResults}
+            showError={showError}
+          />
         </Route>
       </Switch>
     </div>
