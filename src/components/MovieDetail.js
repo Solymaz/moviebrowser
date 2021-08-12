@@ -37,18 +37,27 @@ function MovieDetail() {
             />
           </div>
           <div className="col-md-9">
+            <p className="movieDetail"> English title: {movieDetails.title}</p>
             <p className="lead">Overview: {movieDetails.overview}</p>
             {movieDetails.genres && movieDetails.genres.length > 0 && (
-              <p>Genres: {movieDetails.genres[0].name}</p>
+              <p className="movieDetail">
+                Genres: {movieDetails.genres[0].name}
+              </p>
             )}
-            {movieDetails.vote_average && (
-              <p>Ranking: {movieDetails.vote_average} / 10</p>
+            {movieDetails.vote_average > 0 && (
+              <p className="movieDetail">
+                Ranking: {movieDetails.vote_average} / 10
+              </p>
             )}
             {movieDetails.release_date && (
-              <p>Release date: {movieDetails.release_date} </p>
+              <p className="movieDetail">
+                Release date: {movieDetails.release_date}{" "}
+              </p>
             )}
-            {movieDetails.runtime && (
-              <p>Duration: {movieDetails.runtime} minuts</p>
+            {movieDetails.runtime > 0 && (
+              <p className="movieDetail">
+                Duration: {movieDetails.runtime} minuts
+              </p>
             )}
           </div>
         </div>
