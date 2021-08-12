@@ -16,3 +16,6 @@
   background-position: center center;
   opacity: 0.5;
 }
+.error {
+  font-size: 24px;
+}

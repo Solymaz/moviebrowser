@@ -17,11 +17,8 @@ function Search({ searchKeyword, searchResults, showError }) {
         </div>
       )}
       {showError && (
-        <div className="m-5">Not found any movie 🙁 try again 🎬</div>
+        <div className="m-5 error">Not found any movie 🙁 try again 🎬</div>
       )}
-      <div className="container">
-        <div className="row"></div>
-      </div>
     </>
   );
 }
